@@ -71,6 +71,30 @@ const products = [
     rating: 4,
     numReviews: 12,
   },
+  {
+    name: "Airpods Wireless Headphones",
+    image: "/images/airpods.jpg",
+    description:
+      "Bluetooth technology lets you connect it with compatible devices wirelessly High-quality AAC audio offers immersive listening experience Built-in microphone allows you to take calls while working",
+    brand: "Apple",
+    category: "Electronics",
+    price: 89.99,
+    countInStock: 10,
+    rating: 4.5,
+    numReviews: 12,
+  },
+  {
+    name: "Logitech G-Series Gaming Mouse",
+    image: "/images/mouse.jpg",
+    description:
+      "Get a better handle on your games with this Logitech LIGHTSYNC gaming mouse. The six programmable buttons allow customization for a smooth playing experience",
+    brand: "Logitech",
+    category: "Electronics",
+    price: 49.99,
+    countInStock: 7,
+    rating: 3.5,
+    numReviews: 10,
+  },
 ];
 
 export default products;

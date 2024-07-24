@@ -1,13 +1,13 @@
-import React from "react";
 import { Navbar, Nav, Container, Badge, NavDropdown } from "react-bootstrap";
 import { FaShoppingCart, FaUser } from "react-icons/fa";
 import { LinkContainer } from "react-router-bootstrap";
 import logo from "../assets/logo.png";
 import { useDispatch, useSelector } from "react-redux";
-import { Link, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { useLogoutMutation } from "../slices/usersApiSlice";
 import { logout } from "../slices/authSlice";
 import SearchBox from "./SearchBox";
+import { resetCart } from "../slices/cartSlice";
 
 const Header = () => {
   const { cartItems } = useSelector((state) => state.cart);
@@ -22,6 +22,7 @@ const Header = () => {
     try {
       await logoutApiCall().unwrap();
       dispatch(logout());
+      dispatch(resetCart);
       navigate("/login");
     } catch (error) {
       console.log(error);
@@ -30,7 +31,13 @@ const Header = () => {
 
   return (
     <header>
-      <Navbar bg="dark" variant="dark" expand="md" collapseOnSelect>
+      <Navbar
+        bg="primary"
+        variant="dark"
+        expand="md"
+        collapseOnSelect
+        style={{ backgroundColor: "#343a40" }}
+      >
         <Container>
           <LinkContainer to="/">
             <Navbar.Brand>
